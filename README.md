@@ -1,0 +1,2 @@
+# IntroTilPython
+Intro til faget
