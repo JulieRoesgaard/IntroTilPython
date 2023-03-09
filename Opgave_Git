@@ -1,0 +1,29 @@
+sigma = 3.14
+omega = 2
+N = 10000
+np.random.seed(1986)
+# write your code here
+x = np.random.normal(loc=0, scale=sigma, size=N)
+
+def g(x, omega):
+    if x > omega:
+        return omega
+    elif x < -omega:
+        return -omega
+    else:
+        return x
+    
+mysum = 0
+for i in range(N):
+    mysum += mysum + g(x[i], omega)
+
+expected = 1/N * mysum
+
+variancesum = 0
+for i in range(N):
+    variancesum += (g(x[i], omega) - expected)**2
+
+
+variance = 1/N * variancesum
+
+print(variance)
